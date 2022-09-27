@@ -5,9 +5,9 @@ import javax.swing.JOptionPane;
 public class Menu {
      
     public static void Principal() throws SQLException, ClassNotFoundException {
-        int num = 1;
-        String numero;
-        while (num != 0) {
+        //do while tentar mudar o menu
+        String numero = "1";
+        while (numero.equals("0")) {
         String msg = "MENU PRINCIPAL\n\nINSIRA UMA OPÇÃO:\n0 - SAIR \n1 - USUARIO \n2 - PESSOA \n3 - USUARIO/PESSOA \n4 - LOGRADOURO \n5 - PESSOAALUNO \n6 - DISCIPLINA \n7 - DISCIPLINAALUNO \n8 - ALUNO";
         numero = JOptionPane.showInputDialog(msg);
         if (numero == null){
@@ -16,8 +16,7 @@ public class Menu {
                 break;
                 
         }else{
-            num = Integer.parseInt(numero);
-        switch (num) {
+        switch (Integer.parseInt(numero)) {
             case 0:
                 int sair = JOptionPane.showConfirmDialog(null,"DESEJA SAIR?");
                 if (sair > 0) Principal();

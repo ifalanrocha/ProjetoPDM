@@ -172,7 +172,7 @@ public class Menu {
         int num = 1;
         String numero;
         while (num != 0) {
-        String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        String msg = " MENU LOGRADOURO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
@@ -210,7 +210,7 @@ public class Menu {
         int num = 1;
         String numero;
         while (num != 0) {
-        String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        String msg = " MENU PESSOA ALUNO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
@@ -221,19 +221,19 @@ public class Menu {
             num = Integer.parseInt(numero);
         switch (num) {
             case 1:
-                ManterLogradouro.inserir();
+                ManterPessoaAluno.inserir();
                 break;
             case 2:
-                ManterLogradouro.alterar();
+                ManterPessoaAluno.alterar();
                 break;
             case 3:
-                ManterLogradouro.buscar();
+                ManterPessoaAluno.buscar();
                 break;
             case 4:
-                ManterLogradouro.excluir();
+                ManterPessoaAluno.excluir();
                 break;
             case 5:
-                ManterLogradouro.listar();
+                ManterPessoaAluno.listar();
                 break;
             case 6:
                 Principal();
@@ -248,7 +248,7 @@ public class Menu {
         int num = 1;
         String numero;
         while (num != 0) {
-        String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        String msg = " MENU DISCIPLINA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
@@ -259,19 +259,19 @@ public class Menu {
             num = Integer.parseInt(numero);
         switch (num) {
             case 1:
-                ManterLogradouro.inserir();
+                ManterDisciplina.inserir();
                 break;
             case 2:
-                ManterLogradouro.alterar();
+                ManterDisciplina.alterar();
                 break;
             case 3:
-                ManterLogradouro.buscar();
+                ManterDisciplina.buscar();
                 break;
             case 4:
-                ManterLogradouro.excluir();
+                ManterDisciplina.excluir();
                 break;
             case 5:
-                ManterLogradouro.listar();
+                ManterDisciplina.listar();
                 break;
             case 6:
                 Principal();
@@ -286,7 +286,7 @@ public class Menu {
         int num = 1;
         String numero;
         while (num != 0) {
-        String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        String msg = " MENU DISCIPLINA ALUNO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
@@ -297,19 +297,19 @@ public class Menu {
             num = Integer.parseInt(numero);
         switch (num) {
             case 1:
-                ManterLogradouro.inserir();
+                ManterDisciplinaAluno.inserir();
                 break;
             case 2:
-                ManterLogradouro.alterar();
+                ManterDisciplinaAluno.alterar();
                 break;
             case 3:
-                ManterLogradouro.buscar();
+                ManterDisciplinaAluno.buscar();
                 break;
             case 4:
-                ManterLogradouro.excluir();
+                ManterDisciplinaAluno.excluir();
                 break;
             case 5:
-                ManterLogradouro.listar();
+                ManterDisciplinaAluno.listar();
                 break;
             case 6:
                 Principal();
@@ -324,7 +324,7 @@ public class Menu {
         int num = 1;
         String numero;
         while (num != 0) {
-        String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        String msg = " MENU ALUNO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
@@ -335,19 +335,19 @@ public class Menu {
             num = Integer.parseInt(numero);
         switch (num) {
             case 1:
-                ManterLogradouro.inserir();
+                ManterAluno.inserir();
                 break;
             case 2:
-                ManterLogradouro.alterar();
+                ManterAluno.alterar();
                 break;
             case 3:
-                ManterLogradouro.buscar();
+                ManterAluno.buscar();
                 break;
             case 4:
-                ManterLogradouro.excluir();
+                ManterAluno.excluir();
                 break;
             case 5:
-                ManterLogradouro.listar();
+                ManterAluno.listar();
                 break;
             case 6:
                 Principal();

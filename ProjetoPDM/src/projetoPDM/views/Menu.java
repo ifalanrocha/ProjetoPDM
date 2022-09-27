@@ -5,15 +5,18 @@ import javax.swing.JOptionPane;
 public class Menu {
      
     public static void Principal() throws SQLException, ClassNotFoundException {
-        int num = 10;
+        int num = 1;
+        String numero;
         while (num != 0) {
         String msg = "MENU PRINCIPAL\n\nINSIRA UMA OPÇÃO:\n0 - SAIR \n1 - USUARIO \n2 - PESSOA \n3 - USUARIO/PESSOA \n4 - LOGRADOURO \n5 - PESSOAALUNO \n6 - DISCIPLINA \n7 - DISCIPLINAALUNO \n8 - ALUNO";
-        if (JOptionPane.showInputDialog(msg) == null){
+        numero = JOptionPane.showInputDialog(msg);
+        if (numero == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
                 
         }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 0:
                 int sair = JOptionPane.showConfirmDialog(null,"DESEJA SAIR?");
@@ -53,14 +56,17 @@ public class Menu {
 }
         public static void mPessoa() throws SQLException, ClassNotFoundException {
         int num = 1;
+        String numero;
         while (num != 0) {
         String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n0 - VOLTAR" ;
+        numero = JOptionPane.showInputDialog(msg);
         if  (JOptionPane.showInputDialog(msg) == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
                 
         }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 1:
                 ManterPessoa.inserir();
@@ -88,14 +94,17 @@ public class Menu {
 }
         public static void mUsuario() throws SQLException, ClassNotFoundException {
         int num = 1;
+        String numero;
         while (num != 0) {
         String msg = " MENU USUARIO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
                 
         }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 1:
                 ManterUsuario.inserir();
@@ -123,14 +132,17 @@ public class Menu {
 }
         public static void mUsuarioPessoa() throws SQLException, ClassNotFoundException {        
         int num = 1;
+        String numero;
         while (num != 0) {
         String msg = " MENU USUARIO PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
                 
         }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 1:
                 ManterUsuarioPessoa.inserir();
@@ -155,18 +167,20 @@ public class Menu {
             }
         }
     }
-}
-        
+}       
         public static void mLogradouro() throws SQLException, ClassNotFoundException {
         int num = 1;
+        String numero;
         while (num != 0) {
         String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
                 
         }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 1:
                 ManterLogradouro.inserir();
@@ -194,14 +208,17 @@ public class Menu {
 }
         public static void mPessoaAluno() throws SQLException, ClassNotFoundException {
         int num = 1;
+        String numero;
         while (num != 0) {
         String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
                 
         }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 1:
                 ManterLogradouro.inserir();
@@ -229,14 +246,17 @@ public class Menu {
 }
         public static void mDisciplina() throws SQLException, ClassNotFoundException {
         int num = 1;
+        String numero;
         while (num != 0) {
         String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
                 
         }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 1:
                 ManterLogradouro.inserir();
@@ -264,14 +284,17 @@ public class Menu {
 }
         public static void mDisciplinaAluno() throws SQLException, ClassNotFoundException {
         int num = 1;
+        String numero;
         while (num != 0) {
         String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
                 
         }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 1:
                 ManterLogradouro.inserir();
@@ -299,14 +322,17 @@ public class Menu {
 }
         public static void mAluno() throws SQLException, ClassNotFoundException {
         int num = 1;
+        String numero;
         while (num != 0) {
         String msg = " MENU PESSOA\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        numero = JOptionPane.showInputDialog(msg);
         if (JOptionPane.showInputDialog(msg) == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
                 
         }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 1:
                 ManterLogradouro.inserir();

@@ -1,7 +1,5 @@
 package projetoPDM.models.daos;
 
-import projetoPDM.models.beans.Usuario;
-import projetoPDM.utils.ConexaoDb;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import projetoPDM.models.beans.Usuario;
+import projetoPDM.utils.ConexaoDb;
 
 
 public class DaoUsuario {
@@ -21,7 +21,7 @@ public class DaoUsuario {
 
     public Usuario validar(Usuario usuEnt) throws SQLException {
         // cria o select para ser executado no banco de dados 
-        String sql = "SELECT u.id, u.login, u.senha, u.status, u.tipo FROM dbDispositivosM.usuario u WHERE login = ? AND senha = ?";
+        String sql = "SELECT u.idusu, u.login, u.senha, u.status, u.tipo FROM dbDispositivosM.usuario u WHERE login = ? AND senha = ?";
         // prepared statement para seleção
         PreparedStatement stmt = this.c.prepareStatement(sql);
         // seta os valores
@@ -30,7 +30,7 @@ public class DaoUsuario {
         // executa
         ResultSet rs = stmt.executeQuery();
         // percorrendo o rs
-        Usuario usuSaida = null;
+        Usuario usuSaida = new Usuario();
         while (rs.next()) {      
             // criando o objeto Usuario
             usuSaida = new Usuario(
@@ -42,16 +42,15 @@ public class DaoUsuario {
             // adiciona o usu à lista de usus
         }
         stmt.close();
-        System.out.println("Usuario: " + usuSaida.toString());
         return usuSaida; 
     }
 
     public Usuario excluir(Usuario usuEnt) throws SQLException{
-        String sql = "DELETE FROM dbDispositivosM.usuario WHERE id = ?";
+        String sql = "DELETE FROM dbDispositivosM.usuario WHERE idusu = ?";
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
-        stmt.setInt(1,usuEnt.getId());
+        stmt.setInt(1,usuEnt.getIdusu());
         // executa
         stmt.execute();
         stmt.close();
@@ -60,10 +59,10 @@ public class DaoUsuario {
     }
     
     public Usuario buscar(Usuario usuEnt) throws SQLException{
-        String sql = "SELECT u.id, u.login, u.senha, u.status, u.tipo FROM dbDispositivosM.usuario u WHERE id = ?";
+        String sql = "SELECT u.idusu, u.login, u.senha, u.status, u.tipo FROM dbDispositivosM.usuario u WHERE idusu = ?";
         PreparedStatement stmt = this.c.prepareStatement(sql);
             // seta os valores
-            stmt.setInt(1,usuEnt.getId());
+            stmt.setInt(1,usuEnt.getIdusu());
             // executa
             ResultSet rs = stmt.executeQuery();
             Usuario usuSaida = null;
@@ -97,15 +96,15 @@ public class DaoUsuario {
         stmt.executeUpdate();
         ResultSet rs = stmt.getGeneratedKeys();
         if (rs.next()) {
-            int id = rs.getInt(1);
-            usuEnt.setId(id);
+            int idusu = rs.getInt(1);
+            usuEnt.setIdusu(idusu);
         }
         stmt.close();
         return usuEnt;
     }
 
     public Usuario alterar(Usuario usuEnt) throws SQLException{
-        String sql = "UPDATE dbDispositivosM.usuario SET login = ?, senha = ?, status = ?, tipo = ? WHERE id = ?";
+        String sql = "UPDATE dbDispositivosM.usuario SET login = ?, senha = ?, status = ?, tipo = ? WHERE idusu = ?";
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
@@ -113,7 +112,7 @@ public class DaoUsuario {
         stmt.setString(2,usuEnt.getSenha());
         stmt.setString(3,usuEnt.getStatus());
         stmt.setString(4,usuEnt.getTipo());
-        stmt.setInt(5,usuEnt.getId());
+        stmt.setInt(5,usuEnt.getIdusu());
 
         // executa
         stmt.execute();
@@ -126,7 +125,7 @@ public class DaoUsuario {
 
         List<Usuario> usus = new ArrayList<>();
         
-        String sql = "SELECT u.id, u.login, u.senha, u.status, u.tipo FROM dbDispositivosM.usuario u WHERE login LIKE ?";
+        String sql = "SELECT u.idusu, u.login, u.senha, u.status, u.tipo FROM dbDispositivosM.usuario u WHERE login LIKE ?";
         PreparedStatement stmt = this.c.prepareStatement(sql);
         // seta os valores
         stmt.setString(1,"%" + usuEnt.getLogin() + "%");

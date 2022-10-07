@@ -1,16 +1,16 @@
 package projetoPDM.models.beans;
 
-
 public class Usuario {
     
-    private int id;
+    private int idusu;
     private String login;
     private String senha;
     private String status;
     private String tipo;
 
-    public Usuario(int id) {
-        this.id = id;
+    
+    public Usuario(int idusu) {
+        this.idusu = idusu;
     }
 
     public Usuario(String login) {
@@ -29,8 +29,8 @@ public class Usuario {
         this.tipo = tipo;
     }
 
-    public Usuario(int id, String login, String senha, String status, String tipo) {
-        this.id = id;
+    public Usuario(int idusu, String login, String senha, String status, String tipo) {
+        this.idusu = idusu;
         this.login = login;
         this.senha = senha;
         this.status = status;
@@ -38,15 +38,15 @@ public class Usuario {
     }
 
     public Usuario() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
     }
 
-    public int getId() {
-        return id;
+    public int getIdusu() {
+        return idusu;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdusu(int idusu) {
+        this.idusu = idusu;
     }
 
     public String getLogin() {
@@ -83,6 +83,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "id=" + id + ", login=" + login + ", senha=" + senha + ", status=" + status + ", tipo=" + tipo + '}';
+        return "Usuario{" + "idusu=" + idusu + ", login=" + login + ", senha=" + senha + ", status=" + status + ", tipo=" + tipo + '}';
     } 
 }

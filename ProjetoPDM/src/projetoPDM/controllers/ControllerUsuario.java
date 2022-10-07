@@ -1,9 +1,9 @@
 package projetoPDM.controllers;
 
-import projetoPDM.models.beans.Usuario;
-import projetoPDM.models.daos.DaoUsuario;
 import java.sql.SQLException;
 import java.util.List;
+import projetoPDM.models.beans.Usuario;
+import projetoPDM.models.daos.DaoUsuario;
 
 public class ControllerUsuario {
     

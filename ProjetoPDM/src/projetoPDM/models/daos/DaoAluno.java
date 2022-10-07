@@ -1,6 +1,5 @@
 package projetoPDM.models.daos;
 
-import projetoPDM.utils.ConexaoDb;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,41 +7,42 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import projetoPDM.models.beans.Pessoa;
+import projetoPDM.models.beans.Aluno;
+import projetoPDM.utils.ConexaoDb;
 
-
-public class DaoPessoa {
+public class DaoAluno {
+    
     
     private final Connection c;
     
-    public DaoPessoa() throws SQLException, ClassNotFoundException{
+    public DaoAluno() throws SQLException, ClassNotFoundException{
         this.c = ConexaoDb.getConexaoMySQL();
     }
 
-    public Pessoa excluir(Pessoa pesEnt) throws SQLException{
-        String sql = "DELETE FROM pessoa WHERE id = ?";
+    public Aluno excluir(Aluno aluEnt) throws SQLException{
+        String sql = "DELETE FROM aluno WHERE idalu = ?";
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
-        stmt.setInt(1,pesEnt.getId());
+        stmt.setInt(1,aluEnt.getIdalu());
         // executa
         stmt.execute();
         stmt.close();
         c.close();
-        return pesEnt;
+        return aluEnt;
     }
     
-    public Pessoa buscar(Pessoa pesEnt) throws SQLException{
-        String sql = "SELECT p.id, p.nome, p.rg, p.cpf, p.tipo, p.email FROM dbDispositivosM.pessoa p WHERE id = ?";
+    public Aluno buscar(Aluno aluEnt) throws SQLException{
+        String sql = "SELECT a.idalu, a.nome, a.ra, a.ano, a.idade FROM dbDispositivosM.aluno a WHERE idalu = ?";
         PreparedStatement stmt = this.c.prepareStatement(sql);
             // seta os valores
-            stmt.setInt(1,pesEnt.getId());
+            stmt.setInt(1,aluEnt.getIdalu());
             // executa
             ResultSet rs = stmt.executeQuery();
-            Pessoa pesSaida = null;
+            Aluno aluSaida = null;
             while (rs.next()) {      
             // criando o objeto Usuario
-                pesSaida = new Pessoa(
+                aluSaida = new Aluno(
                     rs.getInt(1),
                     rs.getString(2),
                     rs.getString(3),
@@ -51,64 +51,64 @@ public class DaoPessoa {
             // adiciona o usu à lista de usus
             }
             stmt.close();
-        return pesSaida;
+        return aluSaida;
    }
 
-    public Pessoa inserir(Pessoa pesEnt) throws SQLException{
-        String sql = "INSERT INTO dbDispositivosM.pessoa" + " (nome, rg, cpf, email)" + " VALUES (?,?,?,?)";
+    public Aluno inserir(Aluno aluEnt) throws SQLException{
+        String sql = "INSERT INTO dbDispositivosM.aluno" + " (nome, ra, ano, idade)" + " VALUES (?,?,?,?)";
     
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
         // seta os valores
-        stmt.setString(1,pesEnt.getNome());
-        stmt.setString(2,pesEnt.getRg());
-        stmt.setString(3,pesEnt.getCpf());
-        stmt.setString(4,pesEnt.getEmail());
+        stmt.setString(1,aluEnt.getNome());
+        stmt.setString(2,aluEnt.getRa());
+        stmt.setString(3,aluEnt.getAno());
+        stmt.setString(4,aluEnt.getIdade());
 
         // executa
         stmt.executeUpdate();
         ResultSet rs = stmt.getGeneratedKeys();
         if (rs.next()) {
-            int id = rs.getInt(1);
-            pesEnt.setId(id);
+            int idalu = rs.getInt(1);
+            aluEnt.setIdalu(idalu);
         }
         stmt.close();
-        return pesEnt;
+        return aluEnt;
     }
 
-    public Pessoa alterar(Pessoa pesEnt) throws SQLException{
-        String sql = "UPDATE dbDispositivosM.pessoa SET nome = ?, rg = ?, cpf = ?, email = ? WHERE id = ?";
+    public Aluno alterar(Aluno aluEnt) throws SQLException{
+        String sql = "UPDATE dbDispositivosM.aluno SET nome = ?, ra = ?, ano = ?, idade = ? WHERE idalu = ?";
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
-        stmt.setString(1,pesEnt.getNome());
-        stmt.setString(2,pesEnt.getRg());
-        stmt.setString(3,pesEnt.getCpf());
-        stmt.setString(4,pesEnt.getEmail());
-        stmt.setInt(5,pesEnt.getId());
+        stmt.setString(1,aluEnt.getNome());
+        stmt.setString(2,aluEnt.getRa());
+        stmt.setString(3,aluEnt.getAno());
+        stmt.setString(4,aluEnt.getIdade());
+        stmt.setInt(5,aluEnt.getIdalu());
 
         // executa
         stmt.execute();
         stmt.close();
-        return pesEnt;
+        return aluEnt;
     }
 
-   public List<Pessoa> listar(Pessoa pesEnt) throws SQLException{
+   public List<Aluno> listar(Aluno aluEnt) throws SQLException{
         // usus: array armazena a lista de registros
 
-        List<Pessoa> pess = new ArrayList<>();
+        List<Aluno> aluu = new ArrayList<>();
         
-        String sql = "SELECT p.nome FROM dbDispositivosM.pessoa p";
+        String sql = "SELECT a.idalu, a.nome, a.ra, a.ano, a.idade FROM dbDispositivosM.aluno a WHERE nome LIKE ?";
         PreparedStatement stmt = this.c.prepareStatement(sql);
         // seta os valores
-        stmt.setString(1,"%" + pesEnt.getNome() + "%");
+        stmt.setString(1,"%" + aluEnt.getNome() + "%");
         
         ResultSet rs = stmt.executeQuery();
         
         while (rs.next()) {      
             // criando o objeto Pessoa
-            Pessoa pes = new Pessoa(
+            Aluno alu = new Aluno(
                 rs.getInt(1),
                 rs.getString(2),
                 rs.getString(3),
@@ -116,11 +116,11 @@ public class DaoPessoa {
                 rs.getString(5)
             );
             // adiciona o usu à lista de usus
-            pess.add(pes);
+            aluu.add(alu);
         }
         
         rs.close();
         stmt.close();
-        return pess;
+        return aluu;
    }
 }

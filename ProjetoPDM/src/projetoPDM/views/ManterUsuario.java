@@ -1,37 +1,53 @@
 package projetoPDM.views;
 
-import projetoPDM.controllers.ControllerUsuario;
-import projetoPDM.models.beans.Usuario;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
+import projetoPDM.controllers.ControllerUsuario;
+import projetoPDM.models.beans.Usuario;
+import projetoPDM.principal.Principal;
 
 public class ManterUsuario {
-    
-    public static void menu() throws SQLException, ClassNotFoundException {
-        String msg = " 1 - INSERIR \n 2 - ALTERAR \n 3 - BUSCAR \n 4 - EXCLUIR \n 5 - LISTAR" ;
-        int num = Integer.parseInt(JOptionPane.showInputDialog(msg));
+   
+        public static void mUsuario() throws SQLException, ClassNotFoundException {
+        int num = 1;
+        String numero;
+        while (num != 0) {
+        String msg = " MENU USUARIO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        numero = JOptionPane.showInputDialog(msg);
+        if (JOptionPane.showInputDialog(msg) == null){
+            
+            JOptionPane.showMessageDialog(null, "Cancelado");
+                break;
+                
+        }else{
+            num = Integer.parseInt(numero);
         switch (num) {
             case 1:
-                inserir();
+                ManterUsuario.inserir();
                 break;
             case 2:
-                alterar();
+                ManterUsuario.alterar();
                 break;
             case 3:
-                buscar();
+                ManterUsuario.buscar();
                 break;
             case 4:
-                excluir();
+                ManterUsuario.excluir();
                 break;
             case 5:
-                listar();
+                ManterUsuario.listar();
+                break;
+            case 6:
+                Principal.Principal();
                 break;
             default:
-                System.out.println("OPÇÃO INVALIDA");
+                JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA");
+            }
         }
     }
-
+}
+    
     
     public static void inserir() throws SQLException, ClassNotFoundException {
         String login = JOptionPane.showInputDialog("LOGIN");

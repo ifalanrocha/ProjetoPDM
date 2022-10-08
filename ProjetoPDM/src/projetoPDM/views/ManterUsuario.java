@@ -15,7 +15,7 @@ public class ManterUsuario {
         while (num != 0) {
         String msg = " MENU USUARIO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
-        if (JOptionPane.showInputDialog(msg) == null){
+        if (numero == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
@@ -51,9 +51,25 @@ public class ManterUsuario {
     
     public static void inserir() throws SQLException, ClassNotFoundException {
         String login = JOptionPane.showInputDialog("LOGIN");
+        if(login == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
         String senha = JOptionPane.showInputDialog("SENHA");
+        if(senha == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
         String status = JOptionPane.showInputDialog("STATUS");
+        if(status == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
         String tipo = JOptionPane.showInputDialog("TIPO");
+        if(tipo == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
         Usuario usuEnt = new Usuario(login,senha,status, tipo);
         ControllerUsuario contUsu = new ControllerUsuario();
         Usuario usuSaida = contUsu.inserir(usuEnt);
@@ -63,9 +79,25 @@ public class ManterUsuario {
     public static void alterar() throws SQLException, ClassNotFoundException {
         int id = Integer.parseInt(JOptionPane.showInputDialog("ID"));
         String login = JOptionPane.showInputDialog("LOGIN");
+        if(login == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
         String senha = JOptionPane.showInputDialog("SENHA");
+        if(senha == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
         String status = JOptionPane.showInputDialog("STATUS");
+        if(status == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
         String tipo = JOptionPane.showInputDialog("TIPO");
+        if(tipo == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
         Usuario usuEnt = new Usuario(id,login,senha,status, tipo);
         ControllerUsuario contUsu = new ControllerUsuario();
         Usuario usuSaida = contUsu.alterar(usuEnt);
@@ -91,6 +123,10 @@ public class ManterUsuario {
     
     public static void listar() throws SQLException, ClassNotFoundException {
         String login = JOptionPane.showInputDialog("LOGIN");
+        if(login == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
         Usuario usuEnt = new Usuario(login);
         ControllerUsuario contUsu = new ControllerUsuario();
         List<Usuario> listaUsuario = contUsu.listar(usuEnt);
@@ -102,7 +138,15 @@ public class ManterUsuario {
     public static boolean validar() throws SQLException, ClassNotFoundException {
         boolean retorno = false;
         String login = JOptionPane.showInputDialog("LOGIN");
+        if(login == null){
+        JOptionPane.showMessageDialog(null,"Cancelado!");
+        System.exit(0);
+        }
         String senha = JOptionPane.showInputDialog("SENHA");
+        if(senha == null){
+        JOptionPane.showMessageDialog(null,"Cancelado!");
+        System.exit(0);
+        }
         Usuario usuEnt = new Usuario(login,senha);
         ControllerUsuario contUsu = new ControllerUsuario();
         retorno = contUsu.validar(usuEnt);

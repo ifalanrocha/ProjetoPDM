@@ -8,13 +8,13 @@ import projetoPDM.models.beans.RC;
 import projetoPDM.principal.Principal;
 
 public class ManterRC {
-            public static void mRC() throws SQLException, ClassNotFoundException {
+        public static void mRC() throws SQLException, ClassNotFoundException {
         int num = 1;
         String numero;
         while (num != 0) {
         String msg = " MENU REGISTRO COMPLETO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
-        if (JOptionPane.showInputDialog(msg) == null){
+        if (numero == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;

@@ -13,22 +13,22 @@ public class Aluno {
         this.ra = ra;
     }
 
-    // buscar/excluir usuario pela chave pk
+
     public Aluno(int idalu) {
         this.idalu = idalu;
     }
-    // listar pessoas por nome
+
     public Aluno(String nome) {
         this.nome = nome;
     }
-    // para inserir pessoa
+
     public Aluno(String nome, String ra, String ano, String idade) {
         this.nome = nome;
         this.ra = ra;
         this.ano = ano;
         this.idade = idade;
     }
-    // para alterar dados de pessoa
+
     public Aluno(int idalu, String nome, String ra, String ano, String idade) {
         this.idalu = idalu;
         this.nome = nome;
@@ -76,9 +76,7 @@ public class Aluno {
     public void setIdade(String idade) {
         this.idade = idade;
     }
-    // get e set para valorização de variavei
-    
-    // para impressao
+
     @Override
     public String toString() {
         return "Aluno{" + "idalu=" + idalu + ", nome=" + nome + ", ra=" + ra + ", ano=" + ano + ", idade=" + idade + '}';

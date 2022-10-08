@@ -7,14 +7,13 @@ import projetoPDM.views.ManterBoletim;
 import projetoPDM.views.ManterRC;
 import projetoPDM.views.ManterUsuario;
 
-
-
 public class Principal {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException { 
         if(ManterUsuario.validar() == true ){
         Principal();
-        }
+        
+        }else
         JOptionPane.showMessageDialog(null,"Login ou senha invalido!");
     }
     public static void Principal() throws SQLException, ClassNotFoundException {
@@ -51,7 +50,6 @@ public class Principal {
             default:
                 JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA");
                 }
-
             }
         }
     }

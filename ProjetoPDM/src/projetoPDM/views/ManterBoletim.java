@@ -7,7 +7,6 @@ import projetoPDM.controllers.ControllerBoletim;
 import projetoPDM.models.beans.Boletim;
 import projetoPDM.principal.Principal;
 
-
 public class ManterBoletim {
         public static void mBoletim() throws SQLException, ClassNotFoundException {
         int num = 1;
@@ -51,12 +50,13 @@ public class ManterBoletim {
         
         public static void inserir() throws SQLException, ClassNotFoundException {
         int semestre = Integer.parseInt(JOptionPane.showInputDialog("SEMESTRE"));
+        
         int nmat = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE MATEMATICA"));
         int npor = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE PORTUGUES"));
         int ngeo = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE GEOGRAFIA"));
         Boletim bolEnt = new Boletim(semestre, nmat, npor, ngeo);
-        ControllerBoletim contAlu = new ControllerBoletim();
-        Boletim bolSaida = contAlu.inserir(bolEnt);
+        ControllerBoletim contBol = new ControllerBoletim();
+        Boletim bolSaida = contBol.inserir(bolEnt);
         JOptionPane.showMessageDialog(null, bolSaida.toString());
     }
     
@@ -67,8 +67,8 @@ public class ManterBoletim {
         int npor = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE PORTUGUES"));
         int ngeo = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE GEOGRAFIA"));
         Boletim bolEnt = new Boletim(idbol,semestre, nmat, npor, ngeo);
-        ControllerBoletim contAlu = new ControllerBoletim();
-        Boletim bolSaida = contAlu.alterar(bolEnt);
+        ControllerBoletim contBol = new ControllerBoletim();
+        Boletim bolSaida = contBol.alterar(bolEnt);
         JOptionPane.showMessageDialog(null, bolSaida.toString());
     }
 

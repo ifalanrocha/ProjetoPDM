@@ -13,7 +13,7 @@ public class ControllerUsuario {
         boolean retorno = false;
         daoUsu = new DaoUsuario();
         Usuario usuSaida = daoUsu.validar(usu);
-        retorno = usuSaida.getLogin().equals(usu.getLogin());
+        retorno = usu.getLogin().equals(usuSaida.getLogin());
         return retorno;
     }
 
@@ -41,9 +41,11 @@ public class ControllerUsuario {
         return listaUsu;
     }
 
-    public Usuario excluir(Usuario usuEnt) throws SQLException, ClassNotFoundException {
+    public Usuario excluir(Usuario usuEnt) throws SQLException, ClassNotFoundException { 
+        ControllerRC contrc = new ControllerRC();
+        contrc.excluiridusuario(usuEnt.getIdusu()); 
         daoUsu = new DaoUsuario();
-        usuEnt = daoUsu.excluir(usuEnt);
+        usuEnt = daoUsu.excluir(usuEnt);   
         return usuEnt;
     }
 

@@ -2,55 +2,55 @@ create database dbDispositivosM;
 DROP database dbdispositivosm;
 
 create table dbDispositivosM.usuario (
-  id INT NOT NULL AUTO_INCREMENT,
+  idusu INT NOT NULL AUTO_INCREMENT,
   login VARCHAR(255),
   senha VARCHAR(255),
   status VARCHAR(255),
   tipo VARCHAR(255),
-  primary key (id));
-  
-  INSERT INTO `dbDispositivosM`.`usuarios` (`id`, `login`, `senha`, `status`, `tipo`) VALUES ('1', 'ALAN', '332', 'ADM', 'OOL' );
+  primary key (idusu));
+
+  INSERT dbDispositivosM.usuario (login, senha, status, tipo) VALUES ('ALAN', '332', 'ADM', 'OOL');
+  insert escola.usuario (email, senha) values ('admin', 'admin');
   select * from dbDispositivosM.usuario;
   DROP TABLE dbDispositivosM.usuario;
-  
-  
-create table dbDispositivosM.pessoa (
-  id INT NOT NULL AUTO_INCREMENT,
+
+
+create table dbDispositivosM.aluno (
+  idalu INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(255),
-  rg VARCHAR(255),
-  cpf VARCHAR(255),
-  tipo VARCHAR(255),
-  email VARCHAR(255),
-  primary key (id));
+  ra VARCHAR(255),
+  ano VARCHAR(255),
+  idade VARCHAR(255),
+  primary key (idalu));
 
-INSERT INTO `dbDispositivosM`.`usuarios` (`id`, `nome`, `rg`, `cpf`, `tipo`,`email`) VALUES ('12', 'ALAN', '47474747', '47474747', 'VISITANTE', 'ALANLANALANA');
-  select * from dbDispositivosM.pessoa;
-  DROP TABLE dbDispositivosM.pessoa;
-  
-  
-create table dbDispositivosM.usupes (
-  id INT NOT NULL AUTO_INCREMENT,
-  idusuario INT,
-  idpessoa INT,
-  obs VARCHAR(255),
-  usu VARCHAR(255),
-  pes VARCHAR(255),
-  primary key (id));
-  
-  INSERT INTO `dbDispositivosM`.`usuarios` (`id`, `idusuario`, `idpessoa`, `obs`, `usu`, `pes`) VALUES ('1', '3', '4', 'oi', 'alan', 'rocha');
-  select * from dbDispositivosM.usuario;
-  DROP TABLE dbDispositivosM.usuario;
-  
-  
-create table dbDispositivosM.logradouro (
-  id INT NOT NULL AUTO_INCREMENT,
-  idusupes INT,
-  rua VARCHAR(255),
-  numero INT,
-  cep VARCHAR(255),
-  uf VARCHAR(255),
-  primary key (id));
+INSERT INTO dbDispositivosM.aluno (idalu, nome, ra, ano, idade) VALUES ('12', 'ALAN', '47474747', '2000', '12');
+  select * from dbDispositivosM.aluno;
+  DROP TABLE dbDispositivosM.aluno;
 
-INSERT INTO `dbDispositivosM`.`usuarios` (`login`, `senha`, `status`, `tipo`) VALUES ('ROCHA', '345', 'ATIVO', 'VISITANTE');
-  select * from dbDispositivosM.pessoa;
-  DROP TABLE dbDispositivosM.pessoa;
+
+create table dbDispositivosM.boletim (
+  idbol INT NOT NULL AUTO_INCREMENT,
+  semestre INT,
+  nmat INT,
+  npor INT,
+  ngeo INT,
+  primary key (idbol));
+
+  INSERT INTO dbDispositivosM.boletim (idbol, idusuario, idpessoa, obs, usu, pes) VALUES ('1', '3', '4', 'oi', 'alan', 'rocha');
+  select * from dbDispositivosM.boletim;
+  DROP TABLE dbDispositivosM.boletim;
+
+
+
+create table dbDispositivosM.rc (
+   idrc int PRIMARY KEY AUTO_INCREMENT,
+   idusu int,
+   idalu int,
+   idbol int,
+   FOREIGN KEY (idusu) REFERENCES dbDispositivosM.usuario(idusu),
+   FOREIGN KEY (idalu) REFERENCES dbDispositivosM.aluno(idalu),
+   FOREIGN KEY (idbol) REFERENCES dbDispositivosM.boletim (idbol));
+
+  INSERT INTO dbDispositivosM.rc (idrc, idusu, idalu, idbol) VALUES ('1', '3', '4', '2');
+  select * from dbDispositivosM.boletim;
+  DROP TABLE dbDispositivosM.rc;

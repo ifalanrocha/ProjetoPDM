@@ -29,7 +29,7 @@ public class DaoUsuario {
         stmt.setString(2,usuEnt.getSenha());
         // executa
         ResultSet rs = stmt.executeQuery();
-        // percorrendo o rs
+        // percorrendo o rs if rs = usuario else ususaida null
         Usuario usuSaida = new Usuario();
         while (rs.next()) {      
             // criando o objeto Usuario
@@ -47,11 +47,8 @@ public class DaoUsuario {
 
     public Usuario excluir(Usuario usuEnt) throws SQLException{
         String sql = "DELETE FROM dbDispositivosM.usuario WHERE idusu = ?";
-        // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
-        // seta os valores
         stmt.setInt(1,usuEnt.getIdusu());
-        // executa
         stmt.execute();
         stmt.close();
         c.close();

@@ -9,13 +9,13 @@ import projetoPDM.principal.Principal;
 
 public class ManterAluno {
 
-            public static void mAluno() throws SQLException, ClassNotFoundException {
+        public static void mAluno() throws SQLException, ClassNotFoundException {
         int num = 1;
         String numero;
         while (num != 0) {
         String msg = " MENU ALUNO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
-        if (JOptionPane.showInputDialog(msg) == null){
+        if (numero == null){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 break;
@@ -50,9 +50,29 @@ public class ManterAluno {
     
     public static void inserir() throws SQLException, ClassNotFoundException {
         String nome = JOptionPane.showInputDialog("NOME");
+        
+        if(nome == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
         String ra = JOptionPane.showInputDialog("RA");
+        
+        if(ra == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
         String ano = JOptionPane.showInputDialog("ANO");
+        
+        if(ano == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
         String idade = JOptionPane.showInputDialog("IDADE");
+        
+        if(idade == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
         Aluno aluEnt = new Aluno(nome ,ra , ano, idade);
         ControllerAluno contAlu = new ControllerAluno();
         Aluno aluSaida = contAlu.inserir(aluEnt);
@@ -62,9 +82,25 @@ public class ManterAluno {
     public static void alterar() throws SQLException, ClassNotFoundException {
         int idalu = Integer.parseInt(JOptionPane.showInputDialog("ID"));
         String nome = JOptionPane.showInputDialog("NOME");
+        if(nome == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
         String ra = JOptionPane.showInputDialog("RA");
+        if(ra == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
         String ano = JOptionPane.showInputDialog("ANO");
+        if(ano == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
         String idade = JOptionPane.showInputDialog("IDADE");
+        if(idade == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
         Aluno aluEnt = new Aluno(idalu ,nome ,ra , ano, idade);
         ControllerAluno contAlu = new ControllerAluno();
         Aluno aluSaida = contAlu.alterar(aluEnt);
@@ -90,6 +126,10 @@ public class ManterAluno {
     
     public static void listar() throws SQLException, ClassNotFoundException {
         String ra = JOptionPane.showInputDialog("NOME");
+        if(ra == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
         Aluno aluEnt = new Aluno(ra);
         ControllerAluno contAlu = new ControllerAluno();
         List<Aluno> listaUsuario = contAlu.listar(aluEnt);

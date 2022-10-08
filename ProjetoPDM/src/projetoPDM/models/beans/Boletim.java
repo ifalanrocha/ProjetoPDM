@@ -70,6 +70,8 @@ public class Boletim {
     public void setNgeo(int ngeo) {
         this.ngeo = ngeo;
     }
-
+    public String toString() {
+        return "Boletim{" + "idbol=" + idbol + ", semestre=" + semestre + ", nmat=" + nmat + ", npor=" + npor + ", ngeo=" + ngeo + '}';
+    } 
   
 }

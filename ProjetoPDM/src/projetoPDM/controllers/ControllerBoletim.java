@@ -22,6 +22,8 @@ public class ControllerBoletim {
         return daoBol.listar(bol);
     }
     public Boletim excluir(Boletim bol) throws SQLException, ClassNotFoundException {
+        ControllerRC contrc = new ControllerRC();
+        contrc.excluiridboletim(bol.getIdbol()); 
         daoBol = new DaoBoletim(); 
         return daoBol.excluir(bol);
     }

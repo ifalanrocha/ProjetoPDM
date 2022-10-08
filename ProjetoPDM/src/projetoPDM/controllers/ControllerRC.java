@@ -8,24 +8,39 @@ import projetoPDM.models.daos.DaoRC;
 public class ControllerRC {
         static DaoRC daoRc;
     
-    public RC inserir (RC bol) throws SQLException, ClassNotFoundException {
+    public RC inserir (RC darc) throws SQLException, ClassNotFoundException {
         daoRc = new DaoRC(); 
-        return daoRc.inserir(bol);
+        return daoRc.inserir(darc);
     }
-    public RC alterar (RC bol) throws SQLException, ClassNotFoundException {
+    public RC alterar (RC darc) throws SQLException, ClassNotFoundException {
         daoRc = new DaoRC(); 
-        return daoRc.alterar(bol);
+        return daoRc.alterar(darc);
     }
-    public List<RC> listar (RC bol) throws SQLException, ClassNotFoundException {
+    public List<RC> listar (RC darc) throws SQLException, ClassNotFoundException {
         daoRc = new DaoRC(); 
-        return daoRc.listar(bol);
+        return daoRc.listar(darc);
     }
-    public RC excluir(RC bol) throws SQLException, ClassNotFoundException {
+    public RC excluir(RC darc) throws SQLException, ClassNotFoundException {
         daoRc = new DaoRC(); 
-        return daoRc.excluir(bol);
+        return daoRc.excluir(darc);
     }
-    public RC buscar(RC bol) throws SQLException, ClassNotFoundException {
+    public RC buscar(RC darc) throws SQLException, ClassNotFoundException {
         daoRc = new DaoRC(); 
-        return daoRc.buscar(bol);
+        return daoRc.buscar(darc);
+    }
+        
+    public static void excluiridusuario(int idusu) throws SQLException, ClassNotFoundException {
+        daoRc = new DaoRC();
+        daoRc.excluiridusuario(idusu);
+    }
+        
+    public static void excluiridaluno(int idalu) throws SQLException, ClassNotFoundException {
+        daoRc = new DaoRC();
+        daoRc.excluiridaluno(idalu);
+    }
+            
+    public static void excluiridboletim(int idbol) throws SQLException, ClassNotFoundException {
+        daoRc = new DaoRC();
+        daoRc.excluiridboletim(idbol);
     }
 }

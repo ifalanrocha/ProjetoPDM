@@ -20,12 +20,9 @@ public class DaoRC {
     }
 
     public RC excluir(RC rcEnt) throws SQLException{
-        String sql = "DELETE FROM rc WHERE idrc = ?";
-        // prepared statement para inserção
+        String sql = "DELETE FROM dbDispositivosM.rc WHERE idrc = ?";
         PreparedStatement stmt = c.prepareStatement(sql);
-        // seta os valores
         stmt.setInt(1,rcEnt.getIdrc());
-        // executa
         stmt.execute();
         stmt.close();
         c.close();
@@ -60,9 +57,9 @@ public class DaoRC {
         PreparedStatement stmt = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
         // seta os valores
-        stmt.setInt(1,rcEnt.getIdrc());
-        stmt.setInt(2,rcEnt.getIdusu());
-        stmt.setInt(3,rcEnt.getIdalu());
+        stmt.setInt(1,rcEnt.getIdusu());
+        stmt.setInt(2,rcEnt.getIdalu());
+        stmt.setInt(3,rcEnt.getIdbol());
 
 
         // executa
@@ -118,5 +115,30 @@ public class DaoRC {
         rs.close();
         stmt.close();
         return rce;
+   }
+   
+   public void excluiridusuario(int idusu)throws SQLException{       
+        String sql = "UPDATE dbDispositivosM.rc SET idusu = null WHERE idusu = ?";
+        PreparedStatement stmt = c.prepareStatement(sql);
+        stmt.setInt(1,idusu);
+        stmt.execute();
+        stmt.close();
+        c.close();
+   }
+      public void excluiridaluno(int idalu)throws SQLException{       
+        String sql = "UPDATE dbDispositivosM.aluno SET idalu = null WHERE idusu = ?";
+        PreparedStatement stmt = c.prepareStatement(sql);
+        stmt.setInt(1,idalu);
+        stmt.execute();
+        stmt.close();
+        c.close();
+   }
+         public void excluiridboletim(int idbol)throws SQLException{       
+        String sql = "UPDATE dbDispositivosM.boletim SET idbol = null WHERE idbol = ?";
+        PreparedStatement stmt = c.prepareStatement(sql);
+        stmt.setInt(1,idbol);
+        stmt.execute();
+        stmt.close();
+        c.close();
    }
 }

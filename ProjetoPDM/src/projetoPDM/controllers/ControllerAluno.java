@@ -23,6 +23,8 @@ public class ControllerAluno {
         return daoAlu.listar(alu);
     }
     public Aluno excluir(Aluno alu) throws SQLException, ClassNotFoundException {
+        ControllerRC contrc = new ControllerRC();
+        contrc.excluiridaluno(alu.getIdalu()); 
         daoAlu = new DaoAluno(); 
         return daoAlu.excluir(alu);
     }

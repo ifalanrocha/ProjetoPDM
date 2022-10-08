@@ -51,6 +51,8 @@ public class RC {
     public void setIdbol(int idbol) {
         this.idbol = idbol;
     }
-    
+        public String toString() {
+        return "Registro completo{" + "idrc=" + idrc + ", idusu=" + idusu + ", idalu=" + idalu + ", idbol=" + idbol +  '}';
+    } 
     
 }

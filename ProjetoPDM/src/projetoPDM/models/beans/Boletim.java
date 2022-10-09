@@ -73,5 +73,4 @@ public class Boletim {
     public String toString() {
         return "Boletim{" + "idbol=" + idbol + ", semestre=" + semestre + ", nmat=" + nmat + ", npor=" + npor + ", ngeo=" + ngeo + '}';
     } 
-  
 }

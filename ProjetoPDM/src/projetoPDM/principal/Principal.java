@@ -22,9 +22,10 @@ public class Principal {
         while (numero.equals("0")) {
         String msg = "MENU PRINCIPAL\n\nINSIRA UMA OPÇÃO:\n0 - SAIR \n1 - USUARIO \n2 - ALUNO \n3 - BOLETIM \n4 - REGISTRO COMPLETO";
         numero = JOptionPane.showInputDialog(msg);
-        if (numero == null || numero.equals("")/*chegar no defaut quando for vazio , jeff falou colocar menos 1 e ver como vai pra default*/  ){
+        if (numero == null || numero.equals("")){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
+            System.exit(0);
                 break;
                 
         }else{

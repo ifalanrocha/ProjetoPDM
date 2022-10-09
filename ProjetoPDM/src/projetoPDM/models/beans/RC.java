@@ -54,5 +54,4 @@ public class RC {
         public String toString() {
         return "Registro completo{" + "idrc=" + idrc + ", idusu=" + idusu + ", idalu=" + idalu + ", idbol=" + idbol +  '}';
     } 
-    
 }

@@ -49,8 +49,12 @@ public class ManterBoletim {
         
         
         public static void inserir() throws SQLException, ClassNotFoundException {
-        int semestre = Integer.parseInt(JOptionPane.showInputDialog("SEMESTRE"));
-        
+        String num = JOptionPane.showInputDialog("SEMESTRE");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterBoletim.mBoletim();
+        }
+        int semestre = Integer.parseInt(num);
         int nmat = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE MATEMATICA"));
         int npor = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE PORTUGUES"));
         int ngeo = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE GEOGRAFIA"));
@@ -61,7 +65,12 @@ public class ManterBoletim {
     }
     
     public static void alterar() throws SQLException, ClassNotFoundException {
-        int idbol = Integer.parseInt(JOptionPane.showInputDialog("ID"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterBoletim.mBoletim();
+        }
+        int idbol = Integer.parseInt(num);
         int semestre = Integer.parseInt(JOptionPane.showInputDialog("SEMESTRE"));
         int nmat = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE MATEMATICA"));
         int npor = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE PORTUGUES"));
@@ -73,7 +82,12 @@ public class ManterBoletim {
     }
 
     public static void buscar() throws SQLException, ClassNotFoundException {
-        int idbol = Integer.parseInt(JOptionPane.showInputDialog("ID"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterBoletim.mBoletim();
+        }
+        int idbol = Integer.parseInt(num);
         Boletim bolEnt = new Boletim(idbol);
         ControllerBoletim contBol = new ControllerBoletim();
         Boletim bolSaida = contBol.buscar(bolEnt);
@@ -82,7 +96,12 @@ public class ManterBoletim {
     }
     
     public static void excluir() throws SQLException, ClassNotFoundException {
-        int idbol = Integer.parseInt(JOptionPane.showInputDialog("ID"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterBoletim.mBoletim();
+        }
+        int idbol = Integer.parseInt(num);
         Boletim bolEnt = new Boletim(idbol);
         ControllerBoletim contBol = new ControllerBoletim();
         Boletim bolSaida = contBol.excluir(bolEnt);
@@ -90,7 +109,12 @@ public class ManterBoletim {
     }
     
     public static void listar() throws SQLException, ClassNotFoundException {
-        int idbol = Integer.parseInt(JOptionPane.showInputDialog("ID"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterBoletim.mBoletim();
+        }
+        int idbol = Integer.parseInt(num);
         Boletim bolEnt = new Boletim(idbol);
         ControllerBoletim contBol = new ControllerBoletim();
         List<Boletim> listaBoletim = contBol.listar(bolEnt);

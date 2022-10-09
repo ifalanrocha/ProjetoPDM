@@ -47,7 +47,12 @@ public class ManterRC {
         }
     }
         public static void inserir() throws SQLException, ClassNotFoundException {
-        int idusu = Integer.parseInt(JOptionPane.showInputDialog("ID USUARIO"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterRC.mRC();
+        }
+        int idusu = Integer.parseInt(num);
         int idalu = Integer.parseInt(JOptionPane.showInputDialog("ID ALUNO"));
         int idbol = Integer.parseInt(JOptionPane.showInputDialog("ID BOLETIM"));
         RC rcEnt = new RC(idusu, idalu, idbol);
@@ -57,7 +62,12 @@ public class ManterRC {
     }
     
     public static void alterar() throws SQLException, ClassNotFoundException {
-        int idrc = Integer.parseInt(JOptionPane.showInputDialog("ID REGISTRO COMPLETO"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterRC.mRC();
+        }
+        int idrc = Integer.parseInt(num);
         int idusu = Integer.parseInt(JOptionPane.showInputDialog("ID USUARIO"));
         int idalu = Integer.parseInt(JOptionPane.showInputDialog("ID ALUNO"));
         int idbol = Integer.parseInt(JOptionPane.showInputDialog("ID BOLETIM"));
@@ -68,7 +78,12 @@ public class ManterRC {
     }
 
     public static void buscar() throws SQLException, ClassNotFoundException {
-        int idrc = Integer.parseInt(JOptionPane.showInputDialog("ID REGISTRO COMPLETO"));
+        String num = JOptionPane.showInputDialog("ID REGISTRO COMPLETO");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterRC.mRC();
+        }
+        int idrc = Integer.parseInt(num);
         RC rcEnt = new RC(idrc);
         ControllerRC contBol = new ControllerRC();
         RC bolSaida = contBol.buscar(rcEnt);
@@ -77,7 +92,12 @@ public class ManterRC {
     }
     
     public static void excluir() throws SQLException, ClassNotFoundException {
-        int idrc = Integer.parseInt(JOptionPane.showInputDialog("ID REGISTRO COMPLETO"));
+        String num = JOptionPane.showInputDialog("ID REGISTRO COMPLETO");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterRC.mRC();
+        }
+        int idrc = Integer.parseInt(num);
         RC rcEnt = new RC(idrc);
         ControllerRC contBol = new ControllerRC();
         RC bolSaida = contBol.excluir(rcEnt);
@@ -85,7 +105,12 @@ public class ManterRC {
     }
     
     public static void listar() throws SQLException, ClassNotFoundException {
-        int idrc = Integer.parseInt(JOptionPane.showInputDialog("ID REGISTRO COMPLETO"));
+        String num = JOptionPane.showInputDialog("ID REGISTRO COMPLETO");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterRC.mRC();
+        }
+        int idrc = Integer.parseInt(num);
         RC rcEnt = new RC(idrc);
         ControllerRC contBol = new ControllerRC();
         List<RC> listaRC = contBol.listar(rcEnt);

@@ -80,7 +80,12 @@ public class ManterAluno {
     }
     
     public static void alterar() throws SQLException, ClassNotFoundException {
-        int idalu = Integer.parseInt(JOptionPane.showInputDialog("ID"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
+        int idalu = Integer.parseInt(num);
         String nome = JOptionPane.showInputDialog("NOME");
         if(nome == null){
             JOptionPane.showMessageDialog(null,"Cancelado!");
@@ -108,7 +113,12 @@ public class ManterAluno {
     }
 
     public static void buscar() throws SQLException, ClassNotFoundException {
-        int idalu = Integer.parseInt(JOptionPane.showInputDialog("ID"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
+        int idalu = Integer.parseInt(num);
         Aluno aluEnt = new Aluno(idalu);
         ControllerAluno contAlu = new ControllerAluno();
         Aluno aluSaida = contAlu.buscar(aluEnt);
@@ -117,7 +127,12 @@ public class ManterAluno {
     }
     
     public static void excluir() throws SQLException, ClassNotFoundException {
-        int idalu = Integer.parseInt(JOptionPane.showInputDialog("ID"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterAluno.mAluno();
+        }
+        int idalu = Integer.parseInt(num);
         Aluno aluEnt = new Aluno(idalu);
         ControllerAluno contAlu = new ControllerAluno();
         Aluno aluSaida = contAlu.excluir(aluEnt);

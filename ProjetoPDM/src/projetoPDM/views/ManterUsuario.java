@@ -105,7 +105,12 @@ public class ManterUsuario {
     }
 
     public static void buscar() throws SQLException, ClassNotFoundException {
-        int id = Integer.parseInt(JOptionPane.showInputDialog("ID"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
+        int id = Integer.parseInt(num);
         Usuario usuEnt = new Usuario(id);
         ControllerUsuario contUsu = new ControllerUsuario();
         Usuario usuSaida = contUsu.buscar(usuEnt);
@@ -114,7 +119,12 @@ public class ManterUsuario {
     }
     
     public static void excluir() throws SQLException, ClassNotFoundException {
-        int id = Integer.parseInt(JOptionPane.showInputDialog("ID"));
+        String num = JOptionPane.showInputDialog("ID");
+        if(num == null){
+            JOptionPane.showMessageDialog(null,"Cancelado!");
+            ManterUsuario.mUsuario();
+        }
+        int id = Integer.parseInt(num);
         Usuario usuEnt = new Usuario(id);
         ControllerUsuario contUsu = new ControllerUsuario();
         Usuario usuSaida = contUsu.excluir(usuEnt);

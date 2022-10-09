@@ -12,7 +12,7 @@ CREATE TABLE dbDispositivosM.usuario (
   tipo VARCHAR(255),
   PRIMARY KEY (idusu));
 
-    INSERT INTO dbDispositivosM.usuario (login, senha, status, tipo) VALUES ('1', '1', 'ADM', 'ADM');
+    INSERT INTO dbDispositivosM.usuario (login, senha, status, tipo) VALUES (1, '1', 'ADM', 'ADM');
     SELECT * FROM dbDispositivosM.usuario;
     DROP TABLE dbDispositivosM.usuario;
 
@@ -27,7 +27,7 @@ CREATE TABLE dbDispositivosM.aluno (
   idade VARCHAR(255),
   PRIMARY KEY (idalu));
 
-    INSERT INTO dbDispositivosM.aluno (idalu, nome, ra, ano, idade) VALUES ('1', 'ALAN', '47474747', '2000', '30');
+    INSERT INTO dbDispositivosM.aluno (idalu, nome, ra, ano, idade) VALUES (1, 'ALAN', '47474747', '2000', '30');
     SELECT * FROM dbDispositivosM.aluno;
     DROP TABLE dbDispositivosM.aluno;
 
@@ -42,9 +42,9 @@ CREATE TABLE dbDispositivosM.boletim (
   ngeo INT,
   PRIMARY KEY (idbol));
 
-  INSERT INTO dbDispositivosM.boletim (idbol, semestre, nmat, npor, ngeo) VALUES (1, 2, 3, 4, 5);
-  SELECT * FROM dbDispositivosM.boletim;
-  DROP TABLE dbDispositivosM.boletim;
+    INSERT INTO dbDispositivosM.boletim (idbol, semestre, nmat, npor, ngeo) VALUES (1, 2, 3, 4, 5);
+    SELECT * FROM dbDispositivosM.boletim;
+    DROP TABLE dbDispositivosM.boletim;
 
 
 
@@ -58,6 +58,6 @@ CREATE TABLE dbDispositivosM.rc (
    FOREIGN KEY (idalu) REFERENCES dbDispositivosM.aluno(idalu),
    FOREIGN KEY (idbol) REFERENCES dbDispositivosM.boletim (idbol));
 
-  INSERT INTO dbDispositivosM.rc (idusu, idalu, idbol) VALUES (1, 1, 1);
-  SELECT * FROM dbDispositivosM.rc;
-  DROP TABLE dbDispositivosM.rc;
+    INSERT INTO dbDispositivosM.rc (idusu, idalu, idbol) VALUES (1, 1, 1, 1);
+    SELECT * FROM dbDispositivosM.rc;
+    DROP TABLE dbDispositivosM.rc;

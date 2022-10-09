@@ -19,26 +19,32 @@ public class ManterRC {
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 Principal();
-                
+                break;
         }else{            
         switch (Integer.parseInt(numero)) {
             case 1:
                 ManterRC.inserir();
+                mRC();
                 break;
             case 2:
                 ManterRC.alterar();
+                mRC();
                 break;
             case 3:
                 ManterRC.buscar();
+                mRC();
                 break;
             case 4:
                 ManterRC.excluir();
+                mRC();
                 break;
             case 5:
                 ManterRC.listar();
+                mRC();
                 break;
             case 6:
                 Principal.Principal();
+                mRC();
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA");

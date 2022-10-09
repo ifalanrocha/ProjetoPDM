@@ -19,26 +19,32 @@ public class ManterBoletim {
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 Principal();
-                
+                break;
         }else{
         switch (Integer.parseInt(numero)) {
             case 1:
                 ManterBoletim.inserir();
+                mBoletim();
                 break;
             case 2:
                 ManterBoletim.alterar();
+                mBoletim();
                 break;
             case 3:
                 ManterBoletim.buscar();
+                mBoletim();
                 break;
             case 4:
                 ManterBoletim.excluir();
+                mBoletim();
                 break;
             case 5:
                 ManterBoletim.listar();
+                mBoletim();
                 break;
             case 6:
                 Principal.Principal();
+                mBoletim();
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA");

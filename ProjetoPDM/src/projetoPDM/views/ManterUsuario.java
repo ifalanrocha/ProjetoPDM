@@ -19,26 +19,32 @@ public class ManterUsuario {
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 Principal();
-                
+                break;
         }else{
         switch (Integer.parseInt(numero)) {
             case 1:
                 ManterUsuario.inserir();
+                mUsuario();
                 break;
             case 2:
                 ManterUsuario.alterar();
+                mUsuario();
                 break;
             case 3:
                 ManterUsuario.buscar();
+                mUsuario();
                 break;
             case 4:
                 ManterUsuario.excluir();
+                mUsuario();
                 break;
             case 5:
                 ManterUsuario.listar();
+                mUsuario();
                 break;
             case 6:
                 Principal.Principal();
+                mUsuario();
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA");
@@ -55,20 +61,8 @@ public class ManterUsuario {
             ManterUsuario.mUsuario();
         }
         String senha = JOptionPane.showInputDialog("SENHA");
-        if(senha == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterUsuario.mUsuario();
-        }
         String status = JOptionPane.showInputDialog("STATUS");
-        if(status == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterUsuario.mUsuario();
-        }
         String tipo = JOptionPane.showInputDialog("TIPO");
-        if(tipo == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterUsuario.mUsuario();
-        }
         Usuario usuEnt = new Usuario(login,senha,status, tipo);
         ControllerUsuario contUsu = new ControllerUsuario();
         Usuario usuSaida = contUsu.inserir(usuEnt);
@@ -83,20 +77,8 @@ public class ManterUsuario {
             ManterUsuario.mUsuario();
         }
         String senha = JOptionPane.showInputDialog("SENHA");
-        if(senha == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterUsuario.mUsuario();
-        }
         String status = JOptionPane.showInputDialog("STATUS");
-        if(status == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterUsuario.mUsuario();
-        }
         String tipo = JOptionPane.showInputDialog("TIPO");
-        if(tipo == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterUsuario.mUsuario();
-        }
         Usuario usuEnt = new Usuario(id,login,senha,status, tipo);
         ControllerUsuario contUsu = new ControllerUsuario();
         Usuario usuSaida = contUsu.alterar(usuEnt);

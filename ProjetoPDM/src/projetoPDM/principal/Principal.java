@@ -21,13 +21,13 @@ public class Principal {
         String numero = "0";
         while (numero.equals("0")) {
         String msg = "MENU PRINCIPAL\n\nINSIRA UMA OPÇÃO:\n0 - SAIR \n1 - USUARIO \n2 - ALUNO \n3 - BOLETIM \n4 - REGISTRO COMPLETO";
+        numero = "0";
         numero = JOptionPane.showInputDialog(msg);
         if (numero == null || numero.equals("")){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
             System.exit(0);
                 break;
-                
         }else{
         switch (Integer.parseInt(numero)) {
             case 0:

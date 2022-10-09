@@ -19,26 +19,32 @@ public class ManterAluno {
             
             JOptionPane.showMessageDialog(null, "Cancelado");
                 Principal();
-                
+                break;
         }else{
         switch (Integer.parseInt(numero)) {
             case 1:
                 ManterAluno.inserir();
+                mAluno();
                 break;
             case 2:
                 ManterAluno.alterar();
+                mAluno();
                 break;
             case 3:
                 ManterAluno.buscar();
+                mAluno();
                 break;
             case 4:
                 ManterAluno.excluir();
+                mAluno();
                 break;
             case 5:
                 ManterAluno.listar();
+                mAluno();
                 break;
             case 6:
                 Principal.Principal();
+                mAluno();
                 break;
             default:
                 JOptionPane.showMessageDialog(null,"OPÇÃO INVÁLIDA");

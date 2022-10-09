@@ -12,7 +12,7 @@ CREATE TABLE dbDispositivosM.usuario (
   tipo VARCHAR(255),
   PRIMARY KEY (idusu));
 
-    INSERT INTO dbDispositivosM.usuario (login, senha, status, tipo) VALUES (1, '1', 'ADM', 'ADM');
+    INSERT INTO dbDispositivosM.usuario (idusu, login, senha, status, tipo) VALUES (1, '1', '1', 'ADM', 'ADM');
     SELECT * FROM dbDispositivosM.usuario;
     DROP TABLE dbDispositivosM.usuario;
 

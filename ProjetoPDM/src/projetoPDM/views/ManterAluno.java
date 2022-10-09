@@ -6,23 +6,22 @@ import javax.swing.JOptionPane;
 import projetoPDM.controllers.ControllerAluno;
 import projetoPDM.models.beans.Aluno;
 import projetoPDM.principal.Principal;
+import static projetoPDM.principal.Principal.Principal;
 
 public class ManterAluno {
 
         public static void mAluno() throws SQLException, ClassNotFoundException {
-        int num = 1;
-        String numero;
-        while (num != 0) {
+        String numero = "0";
+        while (numero.equals("0")) {
         String msg = " MENU ALUNO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
-        if (numero == null){
+        if (numero == null || numero.equals("")){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
-                break;
+                Principal();
                 
         }else{
-            num = Integer.parseInt(numero);
-        switch (num) {
+        switch (Integer.parseInt(numero)) {
             case 1:
                 ManterAluno.inserir();
                 break;
@@ -56,23 +55,8 @@ public class ManterAluno {
             ManterAluno.mAluno();
         }
         String ra = JOptionPane.showInputDialog("RA");
-        
-        if(ra == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterAluno.mAluno();
-        }
         String ano = JOptionPane.showInputDialog("ANO");
-        
-        if(ano == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterAluno.mAluno();
-        }
         String idade = JOptionPane.showInputDialog("IDADE");
-        
-        if(idade == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterAluno.mAluno();
-        }
         Aluno aluEnt = new Aluno(nome ,ra , ano, idade);
         ControllerAluno contAlu = new ControllerAluno();
         Aluno aluSaida = contAlu.inserir(aluEnt);
@@ -87,25 +71,9 @@ public class ManterAluno {
         }
         int idalu = Integer.parseInt(num);
         String nome = JOptionPane.showInputDialog("NOME");
-        if(nome == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterAluno.mAluno();
-        }
         String ra = JOptionPane.showInputDialog("RA");
-        if(ra == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterAluno.mAluno();
-        }
         String ano = JOptionPane.showInputDialog("ANO");
-        if(ano == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterAluno.mAluno();
-        }
         String idade = JOptionPane.showInputDialog("IDADE");
-        if(idade == null){
-            JOptionPane.showMessageDialog(null,"Cancelado!");
-            ManterAluno.mAluno();
-        }
         Aluno aluEnt = new Aluno(idalu ,nome ,ra , ano, idade);
         ControllerAluno contAlu = new ControllerAluno();
         Aluno aluSaida = contAlu.alterar(aluEnt);

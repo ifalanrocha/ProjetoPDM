@@ -6,23 +6,22 @@ import javax.swing.JOptionPane;
 import projetoPDM.controllers.ControllerUsuario;
 import projetoPDM.models.beans.Usuario;
 import projetoPDM.principal.Principal;
+import static projetoPDM.principal.Principal.Principal;
 
 public class ManterUsuario {
    
         public static void mUsuario() throws SQLException, ClassNotFoundException {
-        int num = 1;
-        String numero;
-        while (num != 0) {
+        String numero = "0";
+        while (numero.equals("0")) {
         String msg = " MENU USUARIO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
-        if (numero == null){
+        if (numero == null || numero.equals("")){
             
             JOptionPane.showMessageDialog(null, "Cancelado");
-                break;
+                Principal();
                 
         }else{
-            num = Integer.parseInt(numero);
-        switch (num) {
+        switch (Integer.parseInt(numero)) {
             case 1:
                 ManterUsuario.inserir();
                 break;

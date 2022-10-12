@@ -5,7 +5,6 @@ import java.util.List;
 import projetoPDM.models.beans.Aluno;
 import projetoPDM.models.daos.DaoAluno;
 
-
 public class ControllerAluno {
 
     static DaoAluno daoAlu;

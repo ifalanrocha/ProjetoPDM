@@ -14,7 +14,7 @@ public class Principal {
         Principal();
         
         }else
-        JOptionPane.showMessageDialog(null,"Login ou senha invalido!");
+        JOptionPane.showMessageDialog(null,"Login ou senha invalidos!");
     }
     public static void Principal() throws SQLException, ClassNotFoundException {
         //do while tentar mudar o menu

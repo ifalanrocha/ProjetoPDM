@@ -13,7 +13,7 @@ public class ManterAluno {
         public static void mAluno() throws SQLException, ClassNotFoundException {
         String numero = "0";
         while (numero.equals("0")) {
-        String msg = " MENU ALUNO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
+        String msg = "MENU ALUNO\n\nINSIRA UMA OPÇÃO:\n1 - INSERIR \n2 - ALTERAR \n3 - BUSCAR \n4 - EXCLUIR \n5 - LISTAR \n6 - VOLTAR" ;
         numero = JOptionPane.showInputDialog(msg);
         if (numero == null || numero.equals("")){
             

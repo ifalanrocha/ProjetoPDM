@@ -53,7 +53,7 @@ public class ManterRC {
         }
     }
         public static void inserir() throws SQLException, ClassNotFoundException {
-        String num = JOptionPane.showInputDialog("ID");
+        String num = JOptionPane.showInputDialog("ID USUARIO");
         if(num == null){
             JOptionPane.showMessageDialog(null,"Cancelado!");
             ManterRC.mRC();

@@ -102,7 +102,7 @@ public class DaoRC {
         c.close();
    }
       public void excluiridaluno(int idalu)throws SQLException{       
-        String sql = "UPDATE dbDispositivosM.aluno SET idalu = null WHERE idusu = ?";
+        String sql = "UPDATE dbDispositivosM.rc SET idalu = null WHERE idalu = ?";
         PreparedStatement stmt = c.prepareStatement(sql);
         stmt.setInt(1,idalu);
         stmt.execute();
@@ -110,7 +110,7 @@ public class DaoRC {
         c.close();
    }
          public void excluiridboletim(int idbol)throws SQLException{       
-        String sql = "UPDATE dbDispositivosM.boletim SET idbol = null WHERE idbol = ?";
+        String sql = "UPDATE dbDispositivosM.rc SET idbol = null WHERE idbol = ?";
         PreparedStatement stmt = c.prepareStatement(sql);
         stmt.setInt(1,idbol);
         stmt.execute();

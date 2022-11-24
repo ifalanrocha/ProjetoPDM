@@ -5,9 +5,9 @@
 <%
     String cod = request.getParameter("ID");
     int idrc = Integer.parseInt(cod);
-    RC usuPes = new RC(idrc);
-    ControllerRC usuPesCont = new ControllerRC();
-    usuPes = usuPesCont.excluir(usuPes);
+    RC rce = new RC(idrc);
+    ControllerRC rcCont = new ControllerRC();
+    rce = rcCont.excluir(rce);
     
     String pbusca = request.getParameter("PBUSCA");
     

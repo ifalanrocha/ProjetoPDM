@@ -10,7 +10,7 @@
     Aluno alu = new Aluno(nome);
     ControllerAluno alucont = new ControllerAluno();
     List<Aluno> aluu = alucont.listar(alu);
-    Aluno aluLogado = (Aluno) session.getAttribute("AlunoLogado");
+    Usuario usuLogado = (Usuario) session.getAttribute("UsuarioLogado");
     String url = "PBUSCA=" + nome+"&ID=" ;
 %>
 

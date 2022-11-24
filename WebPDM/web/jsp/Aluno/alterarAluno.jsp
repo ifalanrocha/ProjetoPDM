@@ -28,10 +28,10 @@
        <div class="container"/>
        <h1>ALTERAR ALUNO</h1>
         <form name="alterarAluno" action="validaAlterarAluno.jsp" method="post">
-            Nome: <input type="text" name="nome" value="<%=alu.getNome()%>" required > <br>
-            Ra: <input type="text" name="ra" value="<%=alu.getRa()%>" required > <br>
-            Ano: <input type="text" name="ano" value="<%=alu.getAno()%>" required > <br>
-            Idade: <input type="text" name="idade" value="<%=alu.getIdade()%>" required > <br>
+            Nome: <input type="text" name="NOME" value="<%=alu.getNome()%>" required > <br>
+            Ra: <input type="text" name="RA" value="<%=alu.getRa()%>" required > <br>
+            Ano: <input type="text" name="ANO" value="<%=alu.getAno()%>" required > <br>
+            Idade: <input type="text" name="IDADE" value="<%=alu.getIdade()%>" required > <br>
             <input type="HIDDEN" name="ID" value="<%=alu.getIdalu()%>"> <br>
             <input type="HIDDEN" name="PBUSCA" value="<%=pbusca%>"> <br>
             <input type="submit" name="Enviar" value="OK">

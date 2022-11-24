@@ -18,11 +18,12 @@
        <div class="container"/>
        <h1>ALTERAR BOLETIM</h1>
         <form name="alterarBoletim" action="validaAlterarBoletim.jsp" method="post">
-            SEMESTRE: <input type="text" name="NOME" value="<%=sta.getSemestre()%>" required> <br>
-            NMAT: <input type="text" name="DESC" value="<%=sta.getNmat()%>" required> <br>
-            NPOR: <input type="text" name="DESC" value="<%=sta.getNpor()%>" required> <br>
-            NGEO: <input type="text" name="DESC" value="<%=sta.getNgeo()%>" required> <br>
-            <input type="HIDDEN" name="ID" value="<%=sta.getIdbol()%>"> <br>
+            SEMESTRE: <input type="text" name="SEMESTRE" value="<%=bol.getSemestre()%>" required> <br>
+            NMAT: <input type="text" name="NMAT" value="<%=bol.getNmat()%>" required> <br>
+            NPOR: <input type="text" name="NPOR" value="<%=bol.getNpor()%>" required> <br>
+            NGEO: <input type="text" name="NGEO" value="<%=bol.getNgeo()%>" required> <br>
+            OBS: <input type="text" name="OBS" value="<%=bol.getObs()%>" required> <br>            
+            <input type="HIDDEN" name="ID" value="<%=bol.getIdbol()%>"> <br>
             <input type="HIDDEN" name="PBUSCA" value="<%=pbusca%>"> <br>
             <input type="submit" name="Enviar" value="OK">
         </form>

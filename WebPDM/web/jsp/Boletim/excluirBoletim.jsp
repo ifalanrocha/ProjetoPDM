@@ -11,6 +11,6 @@
     String pbusca = request.getParameter("PBUSCA");
     
     // REDIRECIONA PARA A PAG LOGIN.JSP
-    String url = "validaConsultarBoletim.jsp?NOME=" + pbusca;
+    String url = "validaConsultarBoletim.jsp?OBS=" + pbusca;
     response.sendRedirect(url);
 %>

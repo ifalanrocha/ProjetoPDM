@@ -2,32 +2,34 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="projetoPDM.models.beans.Usuario"%>
 <%@page import="projetoPDM.controllers.ControllerUsuario"%>
-<%@page import="projetoPDM.models.beans.Pessoa"%>
-<%@page import="projetoPDM.controllers.ControllerPessoa"%>
-<%@page import="projetoPDM.models.beans.UsuarioPessoa"%>
-<%@page import="projetoPDM.controllers.ControllerUsuarioPessoa"%>
+<%@page import="projetoPDM.models.beans.Aluno"%>
+<%@page import="projetoPDM.controllers.ControllerAluno"%>
+<%@page import="projetoPDM.models.beans.RC"%>
+<%@page import="projetoPDM.controllers.ControllerRC"%>
+<%@page import="projetoPDM.models.beans.Boletim"%>
+<%@page import="projetoPDM.controllers.ControllerBoletim"%>
 
 <%
     String obs = request.getParameter("OBS");
-    UsuarioPessoa usupes = new UsuarioPessoa(obs);
-    ControllerUsuarioPessoa usupescont = new ControllerUsuarioPessoa();
-    List<UsuarioPessoa> usupess = usupescont.listar(usupes);
+    RC usupes = new RC(obs);
+    ControllerRC usupescont = new ControllerRC();
+    List<RC> usupess = usupescont.listar(usupes);
+    
     Usuario usuLogado = (Usuario) session.getAttribute("UsuarioLogado");
     String url = "PBUSCA=" + usupes.getObs()+"&ID=" ;
 %>
 
 <html>
     <%@include file="../../inc/materalizeWeb.inc" %>
-    <title>LISTA USUÁRIOS</title>
+    <title>LISTA REGISTRO COMPLETO</title>
     <body>
         <table class="striped responsive-table">
             <thead>
               <tr>
-                  <th data-field="IdUsuPessoa">Id</th>
-                  <th data-field="IdPessoa">IdPessoa</th>
-                  <th data-field="NomePessoa">NomePessoa</th>
-                  <th data-field="IdUsuario">IdUsuario</th>
-                  <th data-field="NomeUsuario">NomeUsuario</th>
+                  <th data-field="Idrc">Idrc</th>
+                  <th data-field="Idalu">Idalu</th>
+                  <th data-field="Idbol">Idbol</th>
+                  <th data-field="Idusu">Idusu</th>
                   <th data-field="Observacao">Observacao</th>
                   <th data-field="Excluir">Excluir</th>
                   <th data-field="Alterar">Alterar</th>
@@ -35,18 +37,15 @@
             </thead>
             <% if (!(usupess.isEmpty())) { %>    
                 <tbody>
-                    <% for (UsuarioPessoa listaUsuarioPessoa : usupess) { %>
+                    <% for (RC listaUsuarioPessoa : usupess) { %>
                         <tr>
-                            <td><%=listaUsuarioPessoa.getId()%></td>
-                            <td><%=listaUsuarioPessoa.getIdPessoa()%></td>
-                            <td><%=listaUsuarioPessoa.getPes().getNome()%></td>
-                            <td><%=listaUsuarioPessoa.getIdUsuario()%></td>
-                            <td><%=listaUsuarioPessoa.getUsu().getLogin()%></td>
-                            <td><%=listaUsuarioPessoa.getObs()%></td>
-                            <% if (usuLogado.getTipo().equals("ADM")) { %>
-                                <td><a href="excluirRelacaoUsuarioPessoa.jsp?<%=url + listaUsuarioPessoa.getId()%>">Excluir</a></td>
-                                <td><a href="alterarRelacaoUsuarioPessoa.jsp?<%=url + listaUsuarioPessoa.getId()%>">Alterar</a></td>
-                            <% } %>
+                           <td><%=listaUsuarioPessoa.getIdrc()%></td>
+                            <td><%=listaUsuarioPessoa.getIdalu()%></td>
+                            <td><%=listaUsuarioPessoa.getIdbol()%></td>
+                            <td><%=listaUsuarioPessoa.getIdusu()%></td>
+                            <td><%=listaUsuarioPessoa.getObs()%></td>            
+                                <td><a href="excluirRelacaoRC.jsp?<%=url + listaUsuarioPessoa.getIdrc()%>">Excluir</a></td>
+                                <td><a href="alterarRelacaoRC.jsp?<%=url + listaUsuarioPessoa.getIdrc()%>">Alterar</a></td>
                         </tr>
                     <% } %>
                 </tbody>

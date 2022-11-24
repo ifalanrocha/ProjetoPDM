@@ -48,10 +48,8 @@
                             <td><%=listaUsuario.getSenha()%></td>
                             <td><%=listaUsuario.getStatus()%></td>
                             <td><%=listaUsuario.getTipo()%></td>
-                            <% if (usuLogado.getTipo().equals("ADM")) { %>
                                 <td><a href="excluirUsuario.jsp?<%=url + listaUsuario.getIdusu()%>">Excluir</a></td>
                                 <td><a href="alterarUsuario.jsp?<%=url + listaUsuario.getIdusu()%>">Alterar</a></td>
-                            <% } %>
                         </tr>
                     <% } %>
                 </tbody>

@@ -8,11 +8,12 @@
     int nmat = Integer.parseInt(request.getParameter("NMAT"));
     int npor = Integer.parseInt(request.getParameter("NPOR"));
     int ngeo = Integer.parseInt(request.getParameter("NGEO"));
+    String obs = request.getParameter("OBS");
     String pbusca = request.getParameter("PBUSCA");
-    Boletim bol = new Boletim(idbol, semestre, nmat, npor, ngeo);
+    Boletim bol = new Boletim(idbol, semestre, nmat, npor, ngeo, obs);
     ControllerBoletim bolCont = new ControllerBoletim();
     bol = bolCont.alterar(bol);
     // REDIRECIONA PARA A PAG LOGIN.JSP
-    String url = "validaConsultarBoletim.jsp?NOME=" + pbusca;
+    String url = "validaConsultarBoletim.jsp?OBS=" + pbusca;
     response.sendRedirect(url);
 %>

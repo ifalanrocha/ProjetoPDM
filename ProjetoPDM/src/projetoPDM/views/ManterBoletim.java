@@ -60,11 +60,12 @@ public class ManterBoletim {
             JOptionPane.showMessageDialog(null,"Cancelado!");
             ManterBoletim.mBoletim();
         }
-        int semestre = Integer.parseInt(num);
+        int semestre = Integer.parseInt(JOptionPane.showInputDialog("SEMESTRE"));
         int nmat = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE MATEMATICA"));
         int npor = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE PORTUGUES"));
         int ngeo = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE GEOGRAFIA"));
-        Boletim bolEnt = new Boletim(semestre, nmat, npor, ngeo);
+        String obs = JOptionPane.showInputDialog("OBS");
+        Boletim bolEnt = new Boletim(semestre, nmat, npor, ngeo, obs);
         ControllerBoletim contBol = new ControllerBoletim();
         Boletim bolSaida = contBol.inserir(bolEnt);
         JOptionPane.showMessageDialog(null, bolSaida.toString());
@@ -81,7 +82,8 @@ public class ManterBoletim {
         int nmat = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE MATEMATICA"));
         int npor = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE PORTUGUES"));
         int ngeo = Integer.parseInt(JOptionPane.showInputDialog("NOTA DE GEOGRAFIA"));
-        Boletim bolEnt = new Boletim(idbol,semestre, nmat, npor, ngeo);
+        String obs = JOptionPane.showInputDialog("OBS");
+        Boletim bolEnt = new Boletim(idbol,semestre, nmat, npor, ngeo, obs);
         ControllerBoletim contBol = new ControllerBoletim();
         Boletim bolSaida = contBol.alterar(bolEnt);
         JOptionPane.showMessageDialog(null, bolSaida.toString());
@@ -115,13 +117,12 @@ public class ManterBoletim {
     }
     
     public static void listar() throws SQLException, ClassNotFoundException {
-        String num = JOptionPane.showInputDialog("ID");
-        if(num == null){
+        String obs = JOptionPane.showInputDialog("OBS");
+        if(obs == null){
             JOptionPane.showMessageDialog(null,"Cancelado!");
             ManterBoletim.mBoletim();
         }
-        int idbol = Integer.parseInt(num);
-        Boletim bolEnt = new Boletim(idbol);
+        Boletim bolEnt = new Boletim(obs);
         ControllerBoletim contBol = new ControllerBoletim();
         List<Boletim> listaBoletim = contBol.listar(bolEnt);
         for(Boletim bol : listaBoletim) {

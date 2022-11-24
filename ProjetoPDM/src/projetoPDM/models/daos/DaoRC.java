@@ -66,11 +66,11 @@ public class DaoRC {
     public RC alterar(RC rcEnt) throws SQLException{
         String sql = "UPDATE dbDispositivosM.rc SET idusu = ?, idalu = ?, idbol = ?, obs = ? WHERE idrc = ?";
         PreparedStatement stmt = c.prepareStatement(sql);
-        stmt.setInt(1,rcEnt.getIdrc());
-        stmt.setInt(2,rcEnt.getIdusu());
-        stmt.setInt(3,rcEnt.getIdalu());
-        stmt.setInt(4,rcEnt.getIdbol());
-        stmt.setString(5,rcEnt.getObs());
+        stmt.setInt(5,rcEnt.getIdrc());
+        stmt.setInt(1,rcEnt.getIdusu());
+        stmt.setInt(2,rcEnt.getIdalu());
+        stmt.setInt(3,rcEnt.getIdbol());
+        stmt.setString(4,rcEnt.getObs());
         stmt.execute();
         stmt.close();
         return rcEnt;
@@ -78,9 +78,9 @@ public class DaoRC {
 
    public List<RC> listar(RC rcEnt) throws SQLException{
         List<RC> rce = new ArrayList<>(); 
-        String sql = "SELECT r.idrc FROM dbDispositivosM.rc as r";
+        String sql = "SELECT * FROM dbDispositivosM.rc as r WHERE r.obs LIKE ?";
         PreparedStatement stmt = this.c.prepareStatement(sql);
-        stmt.setString(1,"%" + rcEnt.getIdrc() + "%");
+        stmt.setString(1,"%" + rcEnt.getObs() + "%");
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {      
             RC rc = new RC(

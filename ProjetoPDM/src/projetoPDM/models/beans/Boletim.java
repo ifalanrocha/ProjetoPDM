@@ -2,6 +2,38 @@ package projetoPDM.models.beans;
 
 public class Boletim {
   private int idbol, semestre, nmat, npor, ngeo;
+  private String obs;
+
+    public Boletim(int semestre, int nmat, int npor, int ngeo, String obs) {
+        this.semestre = semestre;
+        this.nmat = nmat;
+        this.npor = npor;
+        this.ngeo = ngeo;
+        this.obs = obs;
+    }
+
+    public String getObs() {
+        return obs;
+    }
+
+    public void setObs(String obs) {
+        this.obs = obs;
+    }
+
+    public Boletim(String obs) {
+        this.obs = obs;
+    }
+
+    public Boletim(int idbol, int semestre, int nmat, int npor, int ngeo, String obs) {
+        this.idbol = idbol;
+        this.semestre = semestre;
+        this.nmat = nmat;
+        this.npor = npor;
+        this.ngeo = ngeo;
+        this.obs = obs;
+    }
+  
+  
 
     public Boletim(int nmat, int npor, int ngeo) {
         this.nmat = nmat;
@@ -71,6 +103,6 @@ public class Boletim {
         this.ngeo = ngeo;
     }
     public String toString() {
-        return "Boletim{" + "idbol=" + idbol + ", semestre=" + semestre + ", nmat=" + nmat + ", npor=" + npor + ", ngeo=" + ngeo + '}';
+        return "Boletim{" + "idbol=" + idbol + ", semestre=" + semestre + ", nmat=" + nmat + ", npor=" + npor + ", ngeo=" + ngeo +  ", obs=" + obs +  '}';
     } 
 }

@@ -114,7 +114,7 @@ public class ManterAluno {
     }
     
     public static void listar() throws SQLException, ClassNotFoundException {
-        String ra = JOptionPane.showInputDialog("NOME");
+        String ra = JOptionPane.showInputDialog("RA");
         if(ra == null){
             JOptionPane.showMessageDialog(null,"Cancelado!");
             ManterAluno.mAluno();

@@ -13,8 +13,13 @@ public class RC {
     }
 
     public RC(int idusu, int idalu, int idbol, String obs) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.idusu = idusu;
+        this.idalu = idalu;
+        this.idbol = idbol;
+        this.obs = obs;
     }
+
+    
 
     public String getObs() {
         return obs;

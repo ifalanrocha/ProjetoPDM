@@ -113,17 +113,16 @@ public class ManterRC {
     }
     
     public static void listar() throws SQLException, ClassNotFoundException {
-        String num = JOptionPane.showInputDialog("ID REGISTRO COMPLETO");
-        if(num == null){
+        String obs = JOptionPane.showInputDialog("OBS");
+        if(obs == null){
             JOptionPane.showMessageDialog(null,"Cancelado!");
             ManterRC.mRC();
         }
-        int idrc = Integer.parseInt(num);
-        RC rcEnt = new RC(idrc);
-        ControllerRC contBol = new ControllerRC();
-        List<RC> listaRC = contBol.listar(rcEnt);
-        for(RC bol : listaRC) {
-            JOptionPane.showMessageDialog(null, bol.toString());
+        RC rcEnt = new RC(obs);
+        ControllerRC contRc = new ControllerRC();
+        List<RC> listaRC = contRc.listar(rcEnt);
+        for(RC rcSaida : listaRC) {
+            JOptionPane.showMessageDialog(null, rcSaida.toString());
         }
     }
 }

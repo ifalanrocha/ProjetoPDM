@@ -40,9 +40,10 @@ CREATE TABLE dbDispositivosM.boletim (
   nmat INT,
   npor INT,
   ngeo INT,
+  obs VARCHAR (255),
   PRIMARY KEY (idbol));
 
-    INSERT INTO dbDispositivosM.boletim (idbol, semestre, nmat, npor, ngeo) VALUES (1, 2, 3, 4, 5);
+    INSERT INTO dbDispositivosM.boletim (idbol, semestre, nmat, npor, ngeo, obs) VALUES (5, 6, 7, 8, 9, 'adm');
     SELECT * FROM dbDispositivosM.boletim;
     DROP TABLE dbDispositivosM.boletim;
 
@@ -59,6 +60,6 @@ CREATE TABLE dbDispositivosM.rc (
    FOREIGN KEY (idalu) REFERENCES dbDispositivosM.aluno(idalu),
    FOREIGN KEY (idbol) REFERENCES dbDispositivosM.boletim (idbol));
 
-    INSERT INTO dbDispositivosM.rc (idusu, idalu, idbol, obs) VALUES (1, 1, 1, 1, 'teste');
+    INSERT INTO dbDispositivosM.rc (idusu, idalu, idbol, obs) VALUES (1, 1, 1, 'teste');
     SELECT * FROM dbDispositivosM.rc;
     DROP TABLE dbDispositivosM.rc;

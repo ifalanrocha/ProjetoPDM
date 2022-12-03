@@ -3,7 +3,60 @@ package projetoPDM.models.beans;
 public class RC {
     private int idrc, idusu, idalu, idbol;
     private String obs;
+    private Aluno alu;
+    private Boletim bol;
+    private Usuario usu;
 
+    public RC(int idrc, int idusu, int idalu, int idbol, String obs, Aluno alu, Boletim bol, Usuario usu) {
+        this.idrc = idrc;
+        this.idusu = idusu;
+        this.idalu = idalu;
+        this.idbol = idbol;
+        this.obs = obs;
+        this.alu = alu;
+        this.bol = bol;
+        this.usu = usu;
+    }
+
+    public RC(Usuario usu) {
+        this.usu = usu;
+    }
+
+    public RC(Boletim bol) {
+        this.bol = bol;
+    }
+
+    public RC(Aluno alu) {
+        this.alu = alu;
+    }
+
+    
+    
+    
+    public Aluno getAlu() {
+        return alu;
+    }
+
+    public void setAlu(Aluno alu) {
+        this.alu = alu;
+    }
+
+    public Boletim getBol() {
+        return bol;
+    }
+
+    public void setBol(Boletim bol) {
+        this.bol = bol;
+    }
+
+    public Usuario getUsu() {
+        return usu;
+    }
+
+    public void setUsu(Usuario usu) {
+        this.usu = usu;
+    }
+    
     public RC(int idrc, int idusu, int idalu, int idbol, String obs) {
         this.idrc = idrc;
         this.idusu = idusu;

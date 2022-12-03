@@ -3,12 +3,22 @@
     <%@include file="../../inc/materalizeWeb.inc" %>
     <title>LOGIN - SISTEMA</title>
     <body>
+        
         <div class="container"/>
-            <h1>LOGIN</h1>
+             <nav>
+        <div class="nav-wrapper teal lighten-1">
+        <a href="#" class="brand-logo center">LOGIN</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+                    </ul>
+                </div>
+            </nav>
             <form name="FORMLOGIN" action="menu.jsp" method="post">
                 LOGIN: <input type="text" name ="LOGIN" required> <br>
                 SENHA: <input type="password" name ="SENHA" required> <br>
-                <input type="submit" name="ENVIAR" value="ENVIAR">
+            <button class="btn waves-effect waves-light" type="submit" name="ENVIAR">Entrar
+            <i class="material-icons right">send</i>
+            </button>
             </form>
         </div>
     </body>

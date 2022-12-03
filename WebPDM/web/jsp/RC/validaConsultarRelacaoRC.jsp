@@ -28,8 +28,10 @@
               <tr>
                   <th data-field="Idrc">Idrc</th>
                   <th data-field="Idalu">Idalu</th>
+                  <th data-field="NomePessoa">Nome Aluno</th>
                   <th data-field="Idbol">Idbol</th>
                   <th data-field="Idusu">Idusu</th>
+                  <th data-field="NomeUsuario">Nome Usuario</th>
                   <th data-field="Observacao">Observacao</th>
                   <th data-field="Excluir">Excluir</th>
                   <th data-field="Alterar">Alterar</th>
@@ -41,9 +43,12 @@
                         <tr>
                            <td><%=listaUsuarioPessoa.getIdrc()%></td>
                             <td><%=listaUsuarioPessoa.getIdalu()%></td>
+                            <td><%=listaUsuarioPessoa.getAlu().getNome()%></td> 
                             <td><%=listaUsuarioPessoa.getIdbol()%></td>
                             <td><%=listaUsuarioPessoa.getIdusu()%></td>
-                            <td><%=listaUsuarioPessoa.getObs()%></td>            
+                            <td><%=listaUsuarioPessoa.getUsu().getLogin()%></td>                            
+                            <td><%=listaUsuarioPessoa.getObs()%></td>
+           
                                 <td><a href="excluirRelacaoRC.jsp?<%=url + listaUsuarioPessoa.getIdrc()%>">Excluir</a></td>
                                 <td><a href="alterarRelacaoRC.jsp?<%=url + listaUsuarioPessoa.getIdrc()%>">Alterar</a></td>
                         </tr>

@@ -36,6 +36,16 @@
     <%@include file="../../inc/materalizeWeb.inc" %>
     <title>ALTERAR - RC</title>
     <body>
+                  <script>
+             function goBack() 
+             {
+              window.history.back()
+             }
+          </script>
+
+          <body>
+                <button onclick="goBack()">Go Back</button>
+          </body>
        <div class="container"/>
        <h1>ALTERAR - RC</h1>
         <form name="alterarRelacaoRC" action="validaAlterarRelacaoRC.jsp" method="post">

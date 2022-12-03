@@ -27,6 +27,16 @@
     <%@include file="../../inc/materalizeWeb.inc" %>
     <title>INSERIR REGISTRO COMPLETO</title>
     <body>
+                  <script>
+             function goBack() 
+             {
+              window.history.back()
+             }
+          </script>
+
+          <body>
+                <button onclick="goBack()">Go Back</button>
+          </body>
         <div class="container"/>
             <h1>Inserir Registro Completo</h1>
             <form name="inserirRC" action="validaRelacaoRC.jsp" method="POST">

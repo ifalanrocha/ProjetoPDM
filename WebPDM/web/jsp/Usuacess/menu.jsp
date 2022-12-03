@@ -15,7 +15,10 @@
 <html>
     <%@include file="../../inc/materalizeWeb.inc" %>
     <title>SISTEMA </title>
+    
+    
     <body>
+        <div class="center"/>
         <% if (usuSaida != null) { %>
             <!-- Dropdown1 Trigger -->
             <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Manter Usuário</a>        
@@ -26,12 +29,12 @@
             <% if (usuSaida.getTipo().equals("ADM")) { %>
                 <!-- Dropdown1 Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="../Usuario/inserirUsuario.jsp"> Inserir Usuario </a></li>
-                    <li><a href="../Usuario/consultarUsuario.jsp"> Consultar Usuario </a></li>
+                    <li><a href="../Usuario/inserirUsuario.jsp"> Inserir Usuário </a></li>
+                    <li><a href="../Usuario/consultarUsuario.jsp"> Consultar Usuário </a></li>
                 </ul>
             <% } else { %>
                 <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="../Usuario/consultarUsuario.jsp"> Consultar Usuario </a></li>
+                    <li><a href="../Usuario/consultarUsuario.jsp"> Consultar Usuário </a></li>
                 </ul>
             <% } %>
             <% if (usuSaida.getTipo().equals("ADM")) { %>
@@ -71,5 +74,6 @@
             <% } else { %>
                 <h1>USUÁRIO INVÁLIDO</h1>
         <% } %>
+        </div>
     </body>
 </html>
